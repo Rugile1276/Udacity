@@ -1,0 +1,26 @@
+/* add your CSS here */
+img {
+  width: 300px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.main-container{
+  width: 300px;
+  border-style: solid;
+  border-color: grey;
+  padding: 10px;
+  box-shadow: 10px 10px grey;
+
+}
+
+.info-container{
+  border-style: solid;
+  border-color: grey;
+  padding: 10px
+}
