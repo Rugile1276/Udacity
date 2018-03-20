@@ -1,0 +1,42 @@
+.card-container{
+    max-width: 500px;
+    height: 100%;
+    perspective: 400px;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+}
+.card {
+    height: 100px;
+    width: 100px;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    margin: 10px;
+    text-align: center;
+}
+/* .card:hover {
+    transform: rotateY(180deg);
+} */
+
+.card .side {
+    max-width: 100px;
+    max-height: 100px;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+  }
+  .card .back {
+    background: #eaeaed;
+    transform: rotateY(180deg);
+  }
+
+  .card .front {
+    background:  #0087cc;
+  }
+
+
