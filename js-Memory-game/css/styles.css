@@ -1,3 +1,9 @@
+.container{
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 30px;
+}
 .card-container{
     max-width: 500px;
     height: 100%;
@@ -7,22 +13,22 @@
     flex-wrap: wrap;
     margin: auto;
     justify-content: center;
+    clear: both;
+    margin-bottom: 100px;
+    border-radius: 5%;
+    background: linear-gradient(to right, #c400ff69 , #ffff008f););
 }
 .card {
     height: 100px;
     width: 100px;
     transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
+    transition: all 0.5s ease-in-out;
     margin: 10px;
     text-align: center;
     border-radius: 6px;
 }
 .rotated {
     transform: rotateY(180deg);
-} 
-
-.matched{
-    background-color: green;
 }
 
 .card .side {
@@ -40,6 +46,15 @@
     transform: rotateY(180deg);
   }
 
+  .matched .back{
+      background-color: #6fec6f;
+  }
+
+  .unmatched .back{
+    background-color: #d03b7d;
+  }
+
+
   .card .front {
     background:  #0087cc;
   }
@@ -48,4 +63,20 @@
     font-size: 30px;
   }
 
+.fa-refresh{
+  cursor: pointer;
+}
 
+header{
+  text-align: center;
+}
+
+.container .moves{
+  float: left;
+  padding-left: 150px;
+}
+
+.fa-refresh{
+  float: right;
+  padding-right: 150px;
+}
