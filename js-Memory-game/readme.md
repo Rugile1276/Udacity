@@ -12,4 +12,4 @@ No prerequest for this page needed, just hit index.html file and start a game!
 
 ## Authors
 
-* **Rugile Petrukauskaite** - *Initial work* - [PurpleBooth](https://github.com/Rugile1276)
+* **Rugile Petrukauskaite** - *Initial work*
