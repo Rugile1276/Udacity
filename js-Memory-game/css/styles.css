@@ -1,82 +1,81 @@
-.container{
+.container {
   max-width: 500px;
   text-align: center;
   margin: auto;
   padding-bottom: 30px;
 }
-.card-container{
-    max-width: 500px;
-    height: 100%;
-    perspective: 400px;
-    cursor: pointer;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: center;
-    clear: both;
-    margin-bottom: 100px;
-    border-radius: 5%;
-    background: linear-gradient(to right, #c400ff69 , #ffff008f);
+.card-container {
+  max-width: 500px;
+  height: 100%;
+  perspective: 400px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  justify-content: center;
+  clear: both;
+  margin-bottom: 100px;
+  border-radius: 5%;
+  background: linear-gradient(to right, #c400ff69, #ffff008f);
 }
 .card {
-    height: 100px;
-    width: 100px;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
-    margin: 10px;
-    text-align: center;
-    border-radius: 6px;
+  height: 100px;
+  width: 100px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  margin: 10px;
+  text-align: center;
+  border-radius: 6px;
 }
 .rotated {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card .side {
-    max-width: 100px;
-    max-height: 100px;
-    backface-visibility: hidden;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    width: 100%;
-    border-radius: 6px;
-  }
-  .card .back {
-    background: #eaeaed;
-    transform: rotateY(180deg);
-  }
+  max-width: 100px;
+  max-height: 100px;
+  backface-visibility: hidden;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 6px;
+}
+.card .back {
+  background: #eaeaed;
+  transform: rotateY(180deg);
+}
 
-  .matched .back{
-      background-color: #6fec6f;
-  }
+.matched .back {
+  background-color: #6fec6f;
+}
 
-  .unmatched .back{
-    background-color: #d03b7d;
-  }
+.unmatched .back {
+  background-color: #d03b7d;
+}
 
+.card .front {
+  background: #0087cc;
+}
 
-  .card .front {
-    background:  #0087cc;
-  }
+.card .back .fa {
+  font-size: 30px;
+}
 
-  .card .back .fa{
-    font-size: 30px;
-  }
-
-.fa-refresh{
+.fa-refresh {
   cursor: pointer;
 }
 
-header{
+header {
   text-align: center;
 }
 
-.container .moves{
+.container .moves {
   float: left;
   padding-left: 150px;
 }
 
-.fa-refresh{
+.fa-refresh {
   float: right;
   padding-right: 150px;
 }
