@@ -4,9 +4,9 @@ let refresh = $(".fa-refresh");
 let startAgain = $(".startAgain");
 let openedCards = [];
 let matchedCards = [];
-let moves = 0;
-let starsCount = 3;
 let stars;
+let movesCount;
+let starsCount;
 
 //Mix cards
 function shuffle(array) {
@@ -28,11 +28,12 @@ function startGame(){
     cardsList = $(".card");
     let shuffledCards = shuffle(cardsList);
 
-    moves = 0;
+    movesCount = 0;
     starsCount = 3;
 
-    $("#moves").text(moves);
+    $("#moves").text(movesCount);
     $("#stars").text(starsCount);
+    
 
     shuffledCards.each(function(index) {
         $(this).appendTo(parent);
@@ -42,6 +43,7 @@ function startGame(){
 
 }
 
+// Resets all classes to default
 function resetClasses(){
 
   $(".card").removeClass( "rotated" );
@@ -55,7 +57,7 @@ function resetClasses(){
 
 }
 
-
+// Rotate card to see icon
 function flipCard(card){
 
     if (card.hasClass("front")){
@@ -67,6 +69,7 @@ function flipCard(card){
 
 }
 
+// Checks if cards is matched or not
 function addOpenedCardToList (openedCard) {
     openedCards.push(openedCard);
 
@@ -81,22 +84,26 @@ function addOpenedCardToList (openedCard) {
 
  }
 
+ // Increase moves count
  function increaseMoves() {
-   moves++;
-   $("#moves").text(moves);
-
-   if ((moves === 5) || (moves === 10) || (moves === 15)){
+    movesCount++;
+    $("#moves").text(movesCount);
+   if ((movesCount === 5) || (movesCount === 10)){
      removeStar();
    }
 
  }
 
+  // Remove start when too many moves done
  function removeStar(){
-
+    starsCount--;
+    console.log(movesCount + " ads " + starsCount);
+    $("#stars").text(starsCount);
    stars = $(".fa-star");
    $(stars[stars.length-1]).removeClass("fa-star").addClass("fa-star-o");
  }
 
+ // If cards are matched, it leaves opened
  function match(openedCards){
     openedCards.map( card => card.addClass( "matched" ));
     openedCards.pop(openedCards[0]);
@@ -110,8 +117,8 @@ function addOpenedCardToList (openedCard) {
 
  }
 
+  // If cards unmatched, it should be flip again
  function unmatch(){
-   //$(openedCards).effect( "shake", { direction: "up", times: 4, distance: 50}, 1000 );
    openedCards.map( card => card.addClass( "unmatched" ));
    cardsList.off("click");
 
@@ -126,10 +133,11 @@ function addOpenedCardToList (openedCard) {
 }
 
 function win(){
-  window.location.href = "congrats.html";
-  console.log("as");
-  $("#movesCount").text(moves);
-  $("#starsCount").text(starsCount);
+    setTimeout(function(){
+        $("#ex1").modal();
+        $("#ex1 #stars").text(starsCount);
+        $("#ex1 #moves").text(movesCount);
+    }, 500);
 }
 
 function handleCardClick(){
