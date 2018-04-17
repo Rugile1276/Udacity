@@ -7,6 +7,8 @@ let matchedCards = [];
 let stars;
 let movesCount;
 let starsCount;
+var t = 0;
+let whichClick;
 
 //Mix cards
 function shuffle(array) {
@@ -32,6 +34,7 @@ function startGame() {
 
   movesCount = 0;
   starsCount = 3;
+  whichClick = 0;
 
   $("#moves").text(movesCount);
   $("#stars").text(starsCount);
@@ -128,6 +131,7 @@ function unmatch() {
 
 function win() {
   setTimeout(function() {
+      clearInterval(timer);
     $("#ex1").modal();
     $("#ex1 #stars").text(starsCount);
     $("#ex1 #moves").text(movesCount);
@@ -135,12 +139,19 @@ function win() {
 }
 
 function handleCardClick() {
+    whichClick++;
+    if(whichClick == 1){
+        var timer = setInterval( () => { updateTimer() }, 1000);
+    }
   let target = $(event.target);
 
   if (!target.parent().hasClass("matched")) {
     flipCard($(event.target));
   }
 }
+function updateTimer() { 
+    $("#timer").text(t++);
+ }
 
 startGame();
 
