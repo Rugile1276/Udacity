@@ -72,7 +72,7 @@ header {
 
 .container .moves {
   float: left;
-  padding-left: 150px;
+  padding-left: 10px;
 }
 
 .fa-refresh {

@@ -7,8 +7,9 @@ let matchedCards = [];
 let stars;
 let movesCount;
 let starsCount;
-var t = 0;
+let t = 0;
 let whichClick;
+let timer;
 
 //Mix cards
 function shuffle(array) {
@@ -86,7 +87,7 @@ function addOpenedCardToList(openedCard) {
 function increaseMoves() {
   movesCount++;
   $("#moves").text(movesCount);
-  if (movesCount === 5 || movesCount === 10) {
+  if (movesCount === 9 || movesCount === 17) {
     removeStar();
   }
 }
@@ -135,13 +136,14 @@ function win() {
     $("#ex1").modal();
     $("#ex1 #stars").text(starsCount);
     $("#ex1 #moves").text(movesCount);
+    $("#ex1 #time").text(t);
   }, 500);
 }
 
 function handleCardClick() {
     whichClick++;
     if(whichClick == 1){
-        var timer = setInterval( () => { updateTimer() }, 1000);
+        timer = setInterval( () => { updateTimer() }, 1000);
     }
   let target = $(event.target);
 
