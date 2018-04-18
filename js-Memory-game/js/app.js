@@ -7,7 +7,7 @@ let matchedCards = [];
 let stars;
 let movesCount;
 let starsCount;
-let t = 0;
+let time = 0;
 let whichClick;
 let timer;
 
@@ -33,9 +33,15 @@ function startGame() {
   cardsList = $(".card");
   let shuffledCards = shuffle(cardsList);
 
+  openedCards = [];
+  matchedCards = [];
   movesCount = 0;
   starsCount = 3;
   whichClick = 0;
+  time=0;
+
+  clearInterval(timer);
+  $("#timer").text(time);
 
   $("#moves").text(movesCount);
   $("#stars").text(starsCount);
@@ -132,11 +138,11 @@ function unmatch() {
 
 function win() {
   setTimeout(function() {
-      clearInterval(timer);
+    clearInterval(timer);
     $("#ex1").modal();
     $("#ex1 #stars").text(starsCount);
     $("#ex1 #moves").text(movesCount);
-    $("#ex1 #time").text(t);
+    $("#ex1 #time").text(time);
   }, 500);
 }
 
@@ -152,7 +158,7 @@ function handleCardClick() {
   }
 }
 function updateTimer() { 
-    $("#timer").text(t++);
+    $("#timer").text(time++);
  }
 
 startGame();
