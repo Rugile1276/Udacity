@@ -62,8 +62,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
             it('is hidden', function() {
-                var body = $('.menu-hidden');
-                expect(body).toBeDefined();
+                expect($('body').hasClass(".menu-hidden")).toBe(false);
             });
 
          /* TODO: Write a test that ensures the menu changes
@@ -103,7 +102,7 @@ $(function() {
             });
         });
 
-        describe('Initial Entries', function() {
+        describe('New Feed Selection', function() {
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
@@ -117,10 +116,12 @@ $(function() {
                     done();
                 });
             });
-
-            
-            it('feed container is not empty', function() {
+            it('content changes after loadFeed() is invoked', function() {
                 var entryLinksAfter = $('.entry-link');
+                // COULD YOU PLEASE LOOK AT THOSE? WHY I GET THSE SAME RESULT FOR BOTH?
+                // It looks like entryLinksAfter is assigned after loadfeed() is invoked... And I don't understand why?
+                console.log(entryLinksBefore[1]);
+                console.log(entryLinksAfter[1]);
                 expect(entryLinksBefore).not.toBe(entryLinksAfter);
             });
         });
